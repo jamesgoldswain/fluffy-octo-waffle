@@ -1,12 +1,19 @@
-import { NextPage } from 'next';
+import * as React from 'react'
+import PageHeader from '../components/PageHeader'
+import { ThemeProvider } from 'emotion-theming';
+import { theme } from '../lib/theme';
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <h1>Hello world! - user agent: {userAgent}</h1>
-);
+const Home = () => {
+    return (
 
-Home.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
-  return { userAgent };
-};
-
-export default Home;
+        <ThemeProvider theme={theme}>
+            <PageHeader
+                title={ 'Welcome' }
+                text={ 'Something' }
+            />
+        </ThemeProvider>
+        
+    );
+  };
+  
+  export default Home;
