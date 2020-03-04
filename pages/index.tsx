@@ -2,6 +2,7 @@ import * as React from 'react'
 import PageHeader from '../components/PageHeader'
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from '../lib/theme';
+import NewDomino from '../components/Domino';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
                 title={ 'Welcome' }
                 text={ 'Something' }
             />
+            <NewDomino />
         </ThemeProvider>
         
     );
