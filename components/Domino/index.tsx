@@ -4,11 +4,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import { styles } from './styles';
 import { addDomino } from '../../services/DominoService';
-
-export interface Domino {
-    colour: string
-    value: number
-}
+import { Domino } from '../../interfaces/Domino';
 
 interface Errors {
     email: string
@@ -38,8 +34,8 @@ const NewDomino = () => {
       }) => (
         <form onSubmit={handleSubmit}>
           <input
-            type='blue'
-            name='blue'
+            type='text'
+            name='colour'
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.colour}
