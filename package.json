@@ -24,6 +24,7 @@
     "@emotion/styled": "^10.0.27",
     "emotion-normalize": "^10.1.0",
     "emotion-theming": "^10.0.27",
+    "formik": "^2.1.4",
     "next": "^9.2.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
