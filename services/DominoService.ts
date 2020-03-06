@@ -1,5 +1,6 @@
 import { Dominos } from '../interfaces/Dominos';
 import { Domino } from '../interfaces/Domino';
+import { useState, useEffect } from 'react';
 
 const dominoKey = 'dominos';
 
@@ -17,18 +18,6 @@ export const addDomino = (domino : Domino) => {
 };
 
 export const getDominos = () => {
-
-    // get the current list of dominos out of storage
-
-    let dominoList: Dominos = { dominos: [
-        { colour: 'red', value:10 },
-        { colour: 'green', value:10},
-        { colour: 'blue', value:10},
-        { colour: 'orange', value:10},
-        { colour: 'purple', value:10}
-    ]};
-
-    // add the new domino to the list
-    return dominoList
-
+    let dominoList: Dominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
+    return dominoList;
 };

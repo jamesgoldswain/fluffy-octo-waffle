@@ -4,11 +4,11 @@ import { Formik, FieldArray } from 'formik';
 import { styles } from './styles';
 import { Domino } from '../../interfaces/Domino';
 import { Dominos } from '../../interfaces/Dominos';
-import React from 'react';
-
 
 const DominoList = ({dominos} : Dominos) => {
+
   return (
+    
     <div css={styles}>
     <h1>Your dominos!</h1>
     <Formik

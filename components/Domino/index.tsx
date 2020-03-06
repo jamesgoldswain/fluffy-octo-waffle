@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import React from 'react';
-import { Formik } from 'formik';
+import { Formik, FormikHelpers } from 'formik';
 import { styles } from './styles';
 import { addDomino } from '../../services/DominoService';
 import { Domino } from '../../interfaces/Domino';
@@ -10,17 +10,15 @@ interface Errors {
     email: string
 }
 
-const NewDomino = () => {
+const NewDomino = ({handleSubmit}: any) => {
   return (
     <div css={styles}>
     <h1>Add a domino!</h1>
     <Formik
       initialValues={{ colour: 'blue', value: 1 } as Domino}
-      onSubmit={(values: Domino, actions) => {
-        setTimeout(() => {
-          addDomino(values);
-          actions.setSubmitting(false);
-        }, 400);
+      onSubmit={(domino: Domino, actions) => {
+        handleSubmit(domino);
+        actions.setSubmitting(false);
       }}
     >
       {({
