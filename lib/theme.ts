@@ -7,6 +7,7 @@ export const theme: ITheme = {
       black: '#000',
       blue: '#261cee',
       white: '#fff',
+      orange: '#FF7A64'
     }
   };
   

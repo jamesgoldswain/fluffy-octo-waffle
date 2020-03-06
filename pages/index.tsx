@@ -3,8 +3,7 @@ import PageHeader from '../components/PageHeader'
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from '../lib/theme';
 import NewDomino from '../components/Domino';
-import { Dominos } from '../interfaces/Dominos';
-import { getDominos, addDomino } from '../services/DominoService';
+import { getDominos, addDomino, removeDominos } from '../services/DominoService';
 import { Domino } from '../interfaces/Domino';
 import DominoList from '../components/DominoList';
 
@@ -19,20 +18,29 @@ const Home = () => {
     let dominos = dominoList || [];
   
     return (
-
-        <ThemeProvider theme={theme}>
-            <PageHeader
-                title={ 'Welcome' }
-                text={ 'Something' }
-            />
-            <DominoList dominos={dominos} />
-            <NewDomino handleSubmit={(domino: Domino) => { 
-                addDomino(domino);
-                setDominoList(getDominos().dominos);
-                console.log(domino);
-            }} />
-        </ThemeProvider>
-        
+        <>
+            <ThemeProvider theme={theme}>
+                
+                <PageHeader
+                    title={ 'Welcome' }
+                    text={ 'Something' }
+                />
+                <button
+                    type="button"
+                    onClick={() => { 
+                        removeDominos();
+                        setDominoList(getDominos().dominos);
+                    } }
+                    >Remove them
+                </button>
+                <DominoList dominos={dominos} />
+                <NewDomino handleSubmit={(domino: Domino) => { 
+                    addDomino(domino);
+                    setDominoList(getDominos().dominos);
+                }} />
+            
+            </ThemeProvider>
+        </>
     );
   };
   

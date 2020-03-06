@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import React from 'react';
 import { Formik, FormikHelpers } from 'formik';
 import { styles } from './styles';
-import { addDomino } from '../../services/DominoService';
 import { Domino } from '../../interfaces/Domino';
 
 interface Errors {
@@ -15,7 +13,7 @@ const NewDomino = ({handleSubmit}: any) => {
     <div css={styles}>
     <h1>Add a domino!</h1>
     <Formik
-      initialValues={{ colour: 'blue', value: 1 } as Domino}
+      initialValues={{ colour: 'blue', value: 1, icon: '' } as Domino}
       onSubmit={(domino: Domino, actions) => {
         handleSubmit(domino);
         actions.setSubmitting(false);
@@ -31,6 +29,20 @@ const NewDomino = ({handleSubmit}: any) => {
         isSubmitting,
       }) => (
         <form onSubmit={handleSubmit}>
+          <select
+            name="icon"
+            value={values.icon}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            style={{ display: 'block' }}
+          >
+            <option value="" label="Select" />
+            <option value="🍕" label="🍕" />
+            <option value="☕" label="☕" />
+            <option value="🌭" label="🌭" />
+            <option value="🥓" label="🥓" />
+            <option value="🍉" label="🍉" />
+          </select>
           <input
             type='text'
             name='colour'

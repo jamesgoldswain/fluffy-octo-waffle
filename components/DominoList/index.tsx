@@ -5,6 +5,8 @@ import { styles } from './styles';
 import { Domino } from '../../interfaces/Domino';
 import { Dominos } from '../../interfaces/Dominos';
 
+import { DominoBackground } from '../../icons/DominoBackground';
+
 const DominoList = ({dominos} : Dominos) => {
 
   return (
@@ -30,6 +32,7 @@ const DominoList = ({dominos} : Dominos) => {
         isSubmitting,
       }) => (
         <form onSubmit={handleSubmit}>
+         
           <FieldArray name="dominos">
             {({ form, ...fieldArrayHelpers }) => {
               const onAddClick = () => {
@@ -46,6 +49,8 @@ const DominoList = ({dominos} : Dominos) => {
                     dominos.map((domino: Domino, index: number) => {
                       return ([
                         <label key={`domino-label.${index}`}>{domino.colour}</label>,
+                        <span>{domino.icon}</span>,
+                        <DominoBackground />,
                         <input
                           key={`domino-input.${index}`}
                           type='checkbox'

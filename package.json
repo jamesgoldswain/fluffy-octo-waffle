@@ -27,11 +27,14 @@
     "formik": "^2.1.4",
     "next": "^9.2.2",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "@types/node": "^13.7.7",
     "@types/react": "^16.9.23",
+    "@types/typography": "^0.16.3",
     "typescript": "^3.8.3"
   }
 }

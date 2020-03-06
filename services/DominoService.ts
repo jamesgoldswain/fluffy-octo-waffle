@@ -1,6 +1,5 @@
 import { Dominos } from '../interfaces/Dominos';
 import { Domino } from '../interfaces/Domino';
-import { useState, useEffect } from 'react';
 
 const dominoKey = 'dominos';
 
@@ -20,4 +19,10 @@ export const addDomino = (domino : Domino) => {
 export const getDominos = () => {
     let dominoList: Dominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
     return dominoList;
+};
+
+export const removeDominos = () => {
+    let dominos = { dominos: []}
+    localStorage.setItem(dominoKey, JSON.stringify(dominos));
+    return dominos;
 };

@@ -14,7 +14,11 @@ export const styles = (theme : ITheme) => {
       font-weight: 900;
     }
   }
-
+  select {
+    margin: 10px;
+    font-size: 22pt;
+    min-height:35pt;
+  }
   p {
     margin: 0;
   }
