@@ -1,14 +1,16 @@
-import { Dominos } from '../interfaces/Dominos';
-import { Domino } from '../interfaces/Domino';
+import { IDominos } from '../interfaces/IDominos';
+import { IDomino } from '../interfaces/IDomino';
+import { v4 as uuidv4 } from 'uuid';
 
 const dominoKey = 'dominos';
 
-export const addDomino = (domino : Domino) => {
+export const addDomino = (domino : IDomino) => {
 
     // get the current list of dominos out of storage
 
-    let dominoList: Dominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
+    let dominoList: IDominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
 
+    domino.id = uuidv4();
     // add the new domino to the list
     dominoList.dominos.push(domino)
 
@@ -17,7 +19,7 @@ export const addDomino = (domino : Domino) => {
 };
 
 export const getDominos = () => {
-    let dominoList: Dominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
+    let dominoList: IDominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
     return dominoList;
 };
 

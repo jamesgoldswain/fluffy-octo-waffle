@@ -3,10 +3,6 @@ import { ITheme } from '../../lib/theme';
 
 export const styles = (theme : ITheme) => {
   return css`
-  width: 80%;
-  background-color: #fff;
-  margin-left: auto:
-  margin-right: auto;
   h1 {
     margin: 0;
     padding: 0;
@@ -18,9 +14,10 @@ export const styles = (theme : ITheme) => {
       font-weight: 900;
     }
   }
-
-  span {
-    font-size: 25pt;
+  select {
+    margin: 10px;
+    font-size: 22pt;
+    min-height:35pt;
   }
   p {
     margin: 0;

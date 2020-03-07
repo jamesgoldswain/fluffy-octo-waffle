@@ -2,12 +2,11 @@
 import { jsx } from '@emotion/core'
 import { Formik, FieldArray } from 'formik';
 import { styles } from './styles';
-import { Domino } from '../../interfaces/Domino';
-import { Dominos } from '../../interfaces/Dominos';
+import { IDomino } from '../../interfaces/IDomino';
+import { IDominos } from '../../interfaces/IDominos';
+import Domino from '../Domino';
 
-import { DominoBackground } from '../../icons/DominoBackground';
-
-const DominoList = ({dominos} : Dominos) => {
+const DominoList = ({dominos} : IDominos) => {
 
   return (
     
@@ -46,16 +45,10 @@ const DominoList = ({dominos} : Dominos) => {
               return (
                 <>
                   {
-                    dominos.map((domino: Domino, index: number) => {
+                    dominos.map((domino: IDomino, index: number) => {
                       return ([
                         <label key={`domino-label.${index}`}>{domino.colour}</label>,
-                        <span>{domino.icon}</span>,
-                        <DominoBackground />,
-                        <input
-                          key={`domino-input.${index}`}
-                          type='checkbox'
-                          name={`dominos.${index}`}
-                          value={domino.colour} />
+                        <Domino domino={domino} />
                           ]);
                         }
                   )}

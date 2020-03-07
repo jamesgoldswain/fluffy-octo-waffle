@@ -3,24 +3,25 @@ import { ITheme } from '../../lib/theme';
 
 export const styles = (theme : ITheme) => {
   return css`
-  h1 {
-    margin: 0;
-    padding: 0;
-    color: ${theme.colors.black};
-    font-size: 3.125rem;
-    font-weight: 400;
 
-    span {
-      font-weight: 900;
-    }
+  div {
+    
+    height: 50px;
+    width: 50px;
+    background-color: #FFF;
+    border: solid 1px #000;
+    padding: 5px;
+
   }
-  select {
-    margin: 10px;
-    font-size: 22pt;
-    min-height:35pt;
+
+  font-size: 20pt;
+  text-align: center;
+
+  .top {
+    border-radius: 10px 10px 0 0;
   }
-  p {
-    margin: 0;
+  .bottom {
+    border-radius: 0 0 10px 10px;
   }
 `;
 };
