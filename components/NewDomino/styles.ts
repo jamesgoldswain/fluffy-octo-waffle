@@ -3,6 +3,24 @@ import { ITheme } from '../../lib/theme';
 
 export const styles = (theme : ITheme) => {
   return css`
+
+  select {
+    width: 80%
+  }
+  div {
+    height: 120px;
+    width: 120px;
+    border: solid 1px #000;
+    padding: 5px;
+  }
+
+  .top {
+    border-radius: 10px 10px 0 0;
+  }
+  .bottom {
+    border-radius: 0 0 10px 10px;
+  }
+
   h1 {
     margin: 0;
     padding: 0;

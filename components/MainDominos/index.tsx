@@ -1,5 +1,4 @@
 import * as React from 'react'
-import NewDomino from '../../components/NewDomino';
 import { getDominos, addDomino, removeDominos } from '../../services/DominoService';
 import { IDomino } from '../../interfaces/IDomino';
 import DominoList from '../../components/DominoList';

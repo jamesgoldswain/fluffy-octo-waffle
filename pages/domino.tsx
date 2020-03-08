@@ -20,9 +20,8 @@ const Domino = () => {
       }, []);
       
     return (
-        <>Hello!</>,
         <PageTemplate 
-            main={<NewDomino domino={domino || { topIcon: Emoji.none, bottomIcon: Emoji.none, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
+            main={<NewDomino domino={domino || { topIcon: Emoji.coffee, bottomIcon: Emoji.coffee, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
             addDomino(domino);
             Router.push(`/`)
         }} />} />
