@@ -4,16 +4,22 @@ import { ITheme } from '../../lib/theme';
 export const styles = (theme : ITheme) => {
   return css`
 
-  .dominos {
-    display: flex; 
-    flex-wrap: wrap;  
-    text-align: center;
+  select {
+    width: 80%
+  }
+  div {
+    height: 120px;
+    width: 120px;
+    border: solid 1px #000;
+    padding: 5px;
   }
 
-  width: 80%;
-
-  margin-left: auto:
-  margin-right: auto;
+  .top {
+    border-radius: 10px 10px 0 0;
+  }
+  .bottom {
+    border-radius: 0 0 10px 10px;
+  }
 
   h1 {
     margin: 0;
@@ -26,9 +32,10 @@ export const styles = (theme : ITheme) => {
       font-weight: 900;
     }
   }
-
-  span {
-    font-size: 25pt;
+  select {
+    margin: 10px;
+    font-size: 22pt;
+    min-height:35pt;
   }
   p {
     margin: 0;
