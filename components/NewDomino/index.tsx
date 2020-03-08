@@ -4,17 +4,26 @@ import { Formik, FormikHelpers } from 'formik';
 import { styles } from './styles';
 import { IDomino } from '../../interfaces/IDomino';
 import { Emoji } from '../../lib/icons';
+import React from 'react';
+import { getDomino } from '../../services/DominoService';
 
 interface Errors {
     email: string
 }
 
-const NewDomino = ({handleSubmit}: any) => {
+interface ISomething {
+  handleSubmit: any
+  domino: IDomino
+}
+
+const NewDomino = ({handleSubmit, domino}: ISomething) => {
+
   return (
     <div css={styles}>
-    <h1>Add a domino!</h1>
+    <h1>Add a dominoji!</h1>
     <Formik
-      initialValues={{ colour: 'blue', bottomIcon: Emoji.pizza, topIcon: Emoji.pizza } as IDomino}
+      enableReinitialize
+      initialValues={domino}
       onSubmit={(domino: IDomino, actions) => {
         handleSubmit(domino);
         actions.setSubmitting(false);

@@ -1,26 +1,31 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Formik, FieldArray } from 'formik';
 import { styles } from './styles';
 import { IDomino } from '../../interfaces/IDomino';
-import { IDominos } from '../../interfaces/IDominos';
 import Domino from '../Domino';
+import Router from 'next/router'
 
-const DominoList = ({dominos} : IDominos) => {
-
+interface IP {
+  dominos: IDomino[]
+  handleOnClick: any
+}
+const DominoList = ({dominos}: any) => {
   return (
-    
     <div css={styles}>
-    <h1>Your dominos!</h1>
-
+    <h1>Your dominojis!</h1>
     {
       dominos.map((domino: IDomino, index: number) => {
         return (
-          <Domino key={domino.id} domino={domino} />
-            );
-          }
+          <Domino key={domino.id} domino={domino} handleSubmit={() => { 
+            Router.push({
+              pathname: '/domino',
+              query: { dominoId: domino.id },
+            })
+          } }/>
+          );
+        }
     )}
-
-  </div>);
+  </div>
+  );
 }
 export default DominoList;

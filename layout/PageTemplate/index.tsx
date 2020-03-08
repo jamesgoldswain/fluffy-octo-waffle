@@ -13,11 +13,11 @@ const PageTemplate = ({
   return (
     <>
       <Head>
-        <title>Dominos</title>
+        <title>Dominoji 🙂</title>
       </Head>
 
       <div css={styles(props.theme)}>
-          <PageHeader title='hi' text='oooh' />
+          <PageHeader title='Welcome to Dominoji!' text='Dominoji!' />
           <main>{main}</main>
       </div>
     </>
