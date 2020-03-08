@@ -3,6 +3,10 @@ import { ITheme } from '../../lib/theme';
 
 export const styles = (theme : ITheme) => {
   return css`
+  background-color: #FFF;
+  border-bottom: solid 2px #000;
+  margin-bottom: 10px;
+  
   h1 {
     margin: 0;
     padding: 0;

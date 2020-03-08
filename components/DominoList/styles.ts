@@ -3,10 +3,18 @@ import { ITheme } from '../../lib/theme';
 
 export const styles = (theme : ITheme) => {
   return css`
+
+  .dominos {
+    display: flex; 
+    flex-wrap: wrap;  
+    text-align: center;
+  }
+
   width: 80%;
-  background-color: #fff;
+
   margin-left: auto:
   margin-right: auto;
+
   h1 {
     margin: 0;
     padding: 0;

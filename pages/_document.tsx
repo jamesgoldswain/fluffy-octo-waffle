@@ -1,7 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
-// import { GoogleFont, TypographyStyle } from '@react-typography';
-//import typography from '../lib/typography';
-  
+
 class MyDocument extends Document {
 
   
@@ -9,8 +7,12 @@ class MyDocument extends Document {
       return (
         <Html lang="en">
         <Head>
-          {/* <TypographyStyle typography={typography} />
-          <GoogleFont typography={typography} /> */}
+        <link
+            rel="preload"
+            href="/fonts/Rancho-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
         </Head>
         <body>
           <Main />

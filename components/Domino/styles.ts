@@ -10,6 +10,8 @@ export const styles = (theme : ITheme) => {
     padding: 5px;
   }
 
+  margin: 10px;
+
   cursor: grab;
   font-size: 20pt;
   text-align: center;

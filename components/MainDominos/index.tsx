@@ -13,7 +13,7 @@ const MainDominos = () => {
     }, []);
     
     let dominos = dominoList || [];
-    let dominoView = dominos.length > 0 ? <DominoList dominos={dominos} /> : <span>no dominos :..(</span>
+    let dominoView = dominos.length > 0 ? <DominoList dominos={dominos} /> : <div>no dominojis :..(</div>
 
     return (
         <>

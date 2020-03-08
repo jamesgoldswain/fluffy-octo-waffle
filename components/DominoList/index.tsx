@@ -13,6 +13,7 @@ const DominoList = ({dominos}: any) => {
   return (
     <div css={styles}>
     <h1>Your dominojis!</h1>
+    <div className='dominos'>
     {
       dominos.map((domino: IDomino, index: number) => {
         return (
@@ -24,7 +25,9 @@ const DominoList = ({dominos}: any) => {
           } }/>
           );
         }
-    )}
+      )}
+    </div>
+    
   </div>
   );
 }
