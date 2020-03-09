@@ -10,6 +10,7 @@ export const globalStyles = (theme : ITheme) => css`
 
   html,
   body {
+    font-family: 'Fira Sans';
     background: ${theme.colors.orange};
     color: ${theme.colors.doveGrey};
     overflow-x: hidden;
