@@ -3,8 +3,6 @@ import { ITheme } from '../lib/theme';
 
 export const styles = (theme : ITheme) => {
   return css`
-  /* rancho-regular - latin */
-
   p {
     margin: 0;
   }

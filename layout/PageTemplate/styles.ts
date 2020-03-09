@@ -7,6 +7,12 @@ export const styles = (theme : ITheme) => {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+
+      
+    button {
+      padding: 10px;
+      margin: 5px;
+    }
   }
 `;
 };

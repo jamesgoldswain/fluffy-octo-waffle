@@ -4,6 +4,7 @@ import { IDomino } from '../../interfaces/IDomino';
 import DominoList from '../../components/DominoList';
 import NoDominos from '../../components/NoDominos';
 import Router from 'next/router'
+import { styles } from './styles';
 
 const MainDominos = () => {
 
@@ -17,24 +18,23 @@ const MainDominos = () => {
     let dominoView = dominos.length > 0 ? <DominoList dominos={dominos} /> : <NoDominos />
 
     return (
-        <>
+        <div>
             <button
                 type="button"
                 onClick={() => { 
                     removeDominos();
                     setDominoList(getDominos().dominos);
-                }}
-                >Remove them
+                }}>🚫 Remove them
             </button>
             <button
                 type="button"
                 onClick={() => { 
                     Router.push(`/domino/`)
                 }}
-                >Add one
+                >😍 Add one
             </button>
             { dominoView }
-        </>
+        </div>
     );
   };
   

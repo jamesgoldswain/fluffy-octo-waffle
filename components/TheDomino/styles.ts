@@ -7,6 +7,7 @@ export const styles = (theme : ITheme) => {
   select {
     width: 80%
   }
+
   div {
     height: 120px;
     width: 120px;
@@ -24,7 +25,7 @@ export const styles = (theme : ITheme) => {
   h1 {
     margin: 0;
     padding: 0;
-    color: ${theme.colors.black};
+    color: ${theme.colors.yellow};
     font-size: 3.125rem;
     font-weight: 400;
 

@@ -1,5 +1,5 @@
 
-import NewDomino from "../components/NewDomino";
+import TheDomino from "../components/TheDomino";
 import { IDomino } from "../interfaces/IDomino";
 import { addDomino, getDomino, updateDomino } from "../services/DominoService";
 import { useRouter } from 'next/router'
@@ -24,7 +24,7 @@ const Domino = () => {
       
     return (
         <PageTemplate 
-            main={<NewDomino isNew={isNew} domino={domino || { topIcon: Emoji.coffee, bottomIcon: Emoji.coffee, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
+            main={<TheDomino isNew={!isNew} domino={domino || { topIcon: Emoji.coffee, bottomIcon: Emoji.coffee, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
             isNew ? updateDomino(domino) : addDomino(domino);
             Router.push(`/`);
         }} />} />
