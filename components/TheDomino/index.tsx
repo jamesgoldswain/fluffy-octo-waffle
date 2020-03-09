@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Formik } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { styles } from './styles';
 import { IDomino } from '../../interfaces/IDomino';
 import { Emoji } from '../../lib/icons';
@@ -14,6 +14,8 @@ interface INewDomino {
 
 const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
 
+  let emojis = [ Emoji.bacon, Emoji.coffee, Emoji.hotdog, Emoji.pizza, Emoji.watermelon];
+
   return (
     <div css={styles}>
       <h1>{isNew ? 'Add' : 'Edit' } a dominoji!</h1>
@@ -26,7 +28,6 @@ const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
         }}
       >
         {({
-
           values,
           errors,
           touched,
@@ -35,36 +36,40 @@ const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
           handleSubmit,
           isSubmitting,
         }) => (
-          <form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <div style={{backgroundColor: domino.colour}} className='top'>
-        
-              <select
-                name='topIcon'
-                value={values.topIcon}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                style={{ display: 'block' }}
-              >
-                <option value={Emoji.pizza} label={Emoji.pizza} />
-                <option value={Emoji.coffee} label={Emoji.coffee} />
-                <option value={Emoji.hotdog} label={Emoji.hotdog} />
-                <option value={Emoji.bacon} label={Emoji.bacon} />
-              </select>
-
+            <input value={values.topIcon}/>
+            {
+              emojis.map((e: string) => {
+              return (
+                <Field
+                  render={({ form }: any) => (
+                    <a className='emojiChoice'
+                      onClick={v => {
+                        form.setFieldValue('topIcon', e)
+                      }}
+                    >{e}</a>
+                  )}/>
+                );
+              }
+            )}
             </div>
             <div style={{backgroundColor: domino.colour}} className='bottom'>
-              <select
-                name='bottomIcon'
-                value={values.bottomIcon}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                style={{ display: 'block' }}
-              >
-                <option value={Emoji.pizza} label={Emoji.pizza} />
-                <option value={Emoji.coffee} label={Emoji.coffee} />
-                <option value={Emoji.hotdog} label={Emoji.hotdog} />
-                <option value={Emoji.bacon} label={Emoji.bacon} />
-              </select>
+              <input value={values.bottomIcon}/>
+              {
+              emojis.map((e: string) => {
+                return (
+                  <Field
+                    render={({ form }: any) => (
+                      <a className='emojiChoice'
+                        onClick={v => {
+                          form.setFieldValue('bottomIcon', e)
+                        }}
+                      >{e}</a>
+                    )}/>
+                  );
+                }
+              )}
             </div>
             <input
               type='hidden'
@@ -79,13 +84,12 @@ const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
               👍 Save it
             </button>
             <button
-                  type="button"
                   onClick={() => { 
                     Router.push(`/index`)
                   }}
                   >Don't save it 👎
               </button>
-          </form>
+          </Form>
           
         )}
       </Formik>
