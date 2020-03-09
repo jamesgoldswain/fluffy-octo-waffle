@@ -1,7 +1,7 @@
 
 import NewDomino from "../components/NewDomino";
 import { IDomino } from "../interfaces/IDomino";
-import { addDomino, getDomino } from "../services/DominoService";
+import { addDomino, getDomino, updateDomino } from "../services/DominoService";
 import { useRouter } from 'next/router'
 import { Emoji } from "../lib/icons";
 import React from "react";
@@ -12,7 +12,10 @@ const Domino = () => {
 
     const router = useRouter();
     let id = router.query.dominoId as string;
-  
+    let isNew: boolean = true;
+    if (!id) {
+        isNew = false;
+    }
     const [domino, setDomino] = React.useState<IDomino>();
 
     React.useEffect(() => {
@@ -22,8 +25,8 @@ const Domino = () => {
     return (
         <PageTemplate 
             main={<NewDomino domino={domino || { topIcon: Emoji.coffee, bottomIcon: Emoji.coffee, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
-            addDomino(domino);
-            Router.push(`/`)
+            isNew ? updateDomino(domino) : addDomino(domino);
+            Router.push(`/`);
         }} />} />
     );
 };
