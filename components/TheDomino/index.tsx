@@ -31,7 +31,6 @@ const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
           values,
           errors,
           touched,
-          handleChange,
           handleBlur,
           handleSubmit,
           isSubmitting,
@@ -74,7 +73,6 @@ const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
             <input
               type='hidden'
               name='colour'
-              onChange={handleChange}
               onBlur={handleBlur}
               value={values.colour}
             />
