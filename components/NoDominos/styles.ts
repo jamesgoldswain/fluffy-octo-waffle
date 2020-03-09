@@ -3,16 +3,7 @@ import { ITheme } from '../../lib/theme';
 
 export const styles = (theme : ITheme) => {
   return css`
-  main {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-
-      
-    button {
-      padding: 10px;
-      margin: 5px;
-    }
-  }
+    font-size: 25pt;
+    padding-top: 20px;
 `;
 };

@@ -6,7 +6,7 @@ export const styles = (theme : ITheme) => {
   background-color: #FFF;
   border-bottom: solid 2px #000;
   margin-bottom: 10px;
-  
+
   h1 {
     margin: 0;
     padding: 0;

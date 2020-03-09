@@ -2,7 +2,9 @@ import * as React from 'react'
 import { getDominos, addDomino, removeDominos } from '../../services/DominoService';
 import { IDomino } from '../../interfaces/IDomino';
 import DominoList from '../../components/DominoList';
+import NoDominos from '../../components/NoDominos';
 import Router from 'next/router'
+import { styles } from './styles';
 
 const MainDominos = () => {
 
@@ -13,27 +15,26 @@ const MainDominos = () => {
     }, []);
     
     let dominos = dominoList || [];
-    let dominoView = dominos.length > 0 ? <DominoList dominos={dominos} /> : <div>no dominojis :..(</div>
+    let dominoView = dominos.length > 0 ? <DominoList dominos={dominos} /> : <NoDominos />
 
     return (
-        <>
+        <div>
             <button
                 type="button"
                 onClick={() => { 
                     removeDominos();
                     setDominoList(getDominos().dominos);
-                }}
-                >Remove them
+                }}>🚫 Remove them
             </button>
             <button
                 type="button"
                 onClick={() => { 
                     Router.push(`/domino/`)
                 }}
-                >Add one
+                >😍 Add one
             </button>
             { dominoView }
-        </>
+        </div>
     );
   };
   

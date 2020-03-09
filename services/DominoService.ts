@@ -1,7 +1,6 @@
 import { IDominos } from '../interfaces/IDominos';
 import { IDomino } from '../interfaces/IDomino';
 import { v4 as uuidv4 } from 'uuid';
-import { Emoji } from '../lib/icons';
 
 const dominoKey = 'dominos';
 
@@ -27,6 +26,17 @@ export const getDominos = () => {
 export const getDomino = (id: string) => {
     let dominoList: IDominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
     return dominoList.dominos.find(d => d.id === id);
+};
+
+export const updateDomino = (domino: IDomino) => {
+    let dominoList: IDominos = JSON.parse(localStorage.getItem(dominoKey) || JSON.stringify({ dominos: []}));
+    let editDomino = dominoList.dominos.find(d => d.id === domino.id) || undefined;
+    if (editDomino){
+        let index = dominoList.dominos.indexOf(editDomino);
+        dominoList.dominos.splice(index, 1, domino);
+        localStorage.setItem(dominoKey, JSON.stringify(dominoList));
+    }
+
 };
 
 export const removeDominos = () => {

@@ -7,7 +7,7 @@ interface IPageHeader {
     text: string
 }
 
-const PageHeader = ({ title, text, ...props }: IPageHeader) => {
+const PageHeader = ({ title, text }: IPageHeader) => {
     return (
         <div css={styles}>
           { title && <h1 dangerouslySetInnerHTML={ {__html: title } } /> }

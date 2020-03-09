@@ -6,5 +6,11 @@ export const styles = (theme : ITheme) => {
   p {
     margin: 0;
   }
+
+  button {
+    padding: 10px;
+    margin: 5px;
+  }
+
 `;
 };

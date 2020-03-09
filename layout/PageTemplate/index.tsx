@@ -17,7 +17,7 @@ const PageTemplate = ({
       </Head>
 
       <div css={styles(props.theme)}>
-          <PageHeader title='Welcome to Dominoji!' text='Dominoji!' />
+          <PageHeader title='Welcome to Dominoji!' text='Where all your emoji domino dreams can come true ...' />
           <main>{main}</main>
       </div>
     </>
