@@ -4,8 +4,12 @@ import { ITheme } from '../../lib/theme';
 export const styles = (theme : ITheme) => {
   return css`
 
-  select {
-    width: 80%
+  input {
+    padding-top:20px;
+    width: 100%;
+    font-size: 25pt;
+    border: 0;
+    text-align: center;
   }
 
   div {
@@ -13,6 +17,20 @@ export const styles = (theme : ITheme) => {
     width: 120px;
     border: solid 1px #000;
     padding: 5px;
+  }
+
+  .emojiChoice:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .emojiChoice {
+    font-size: 12pt;
+    cursor: grab;
+    transition: transform .2s; /* Animation */
+  }
+
+  .emojiChoice:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 
   .top {
