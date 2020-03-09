@@ -9,13 +9,14 @@ import Router from 'next/router'
 interface INewDomino {
   handleSubmit: any
   domino: IDomino
+  isNew: boolean
 }
 
-const NewDomino = ({handleSubmit, domino}: INewDomino) => {
+const NewDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
 
   return (
     <div css={styles}>
-    <h1>Add a dominoji!</h1>
+    <h1>{isNew ? 'Add' : 'Edit' } a dominoji!</h1>
     <Formik
       enableReinitialize
       initialValues={domino}

@@ -24,7 +24,7 @@ const Domino = () => {
       
     return (
         <PageTemplate 
-            main={<NewDomino domino={domino || { topIcon: Emoji.coffee, bottomIcon: Emoji.coffee, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
+            main={<NewDomino isNew={isNew} domino={domino || { topIcon: Emoji.coffee, bottomIcon: Emoji.coffee, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
             isNew ? updateDomino(domino) : addDomino(domino);
             Router.push(`/`);
         }} />} />

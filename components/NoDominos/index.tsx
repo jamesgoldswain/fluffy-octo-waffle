@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import { styles } from './styles';
 
 const NoDominos = () => {
-
   return (
-    <div><span>no dominojis 🙀</span></div>
+    <div css={styles}><span>Oh noes! No dominojis 🙀</span></div>
   );
 }
 
