@@ -10,3 +10,6 @@ TODO
 
 ## Deployment
 TODO
+
+## Preview
+![Preview](images/preview.gif)
