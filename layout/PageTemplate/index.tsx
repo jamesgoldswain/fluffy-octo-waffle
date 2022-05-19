@@ -1,11 +1,12 @@
 /** @jsx jsx */
+/** @jsxRuntime classic */
 import { jsx } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
 import PageHeader from '../../components/PageHeader';
-
+import * as React from 'react'
 const PageTemplate = ({
   main,
   ...props
