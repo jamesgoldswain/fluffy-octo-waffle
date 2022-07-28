@@ -3,7 +3,6 @@
 import { jsx } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
 import Head from 'next/head';
-import PropTypes from 'prop-types';
 import { styles } from './styles';
 import PageHeader from '../../components/PageHeader';
 import * as React from 'react'
@@ -27,6 +26,3 @@ const PageTemplate = ({
 
 export default withTheme(PageTemplate);
 
-PageTemplate.propTypes = {
-  main: PropTypes.node.isRequired,
-};
