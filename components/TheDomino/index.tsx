@@ -38,38 +38,42 @@ const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
         }) => (
           <Form onSubmit={handleSubmit}>
             <div style={{backgroundColor: domino.colour}} className='top'>
-            <input value={values.topIcon}/>
-            {
-              emojis.map((e: string) => {
-              return (
-                <Field
-                  render={({ form }: any) => (
-                    <a className='emojiChoice'
-                      onClick={v => {
-                        form.setFieldValue('topIcon', e)
-                      }}
-                    >{e}</a>
-                  )}/>
-                );
-              }
-            )}
-            </div>
-            <div style={{backgroundColor: domino.colour}} className='bottom'>
-              <input value={values.bottomIcon}/>
+            <input value={values.topIcon} disabled/>
+            <div className="emojis">
               {
-              emojis.map((e: string) => {
+                emojis.map((e: string) => {
                 return (
                   <Field
                     render={({ form }: any) => (
                       <a className='emojiChoice'
                         onClick={v => {
-                          form.setFieldValue('bottomIcon', e)
+                          form.setFieldValue('topIcon', e)
                         }}
                       >{e}</a>
                     )}/>
                   );
                 }
               )}
+            </div>
+            </div>
+            <div style={{backgroundColor: domino.colour}} className='bottom'>
+              <input value={values.bottomIcon} disabled/>
+              <div className="emojis">
+                {
+                emojis.map((e: string) => {
+                  return (
+                    <Field
+                      render={({ form }: any) => (
+                        <a className='emojiChoice'
+                          onClick={v => {
+                            form.setFieldValue('bottomIcon', e)
+                          }}
+                        >{e}</a>
+                      )}/>
+                    );
+                  }
+                )}
+              </div>    
             </div>
             <input
               type='hidden'
@@ -84,7 +88,7 @@ const TheDomino = ({handleSubmit, domino, isNew}: INewDomino) => {
             </button>
             <button
                   onClick={() => { 
-                    Router.push(`/index`)
+                    Router.push(`/`)
                   }}
                   >Don't save it 👎
               </button>
