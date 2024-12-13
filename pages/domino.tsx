@@ -13,9 +13,9 @@ const Domino = () => {
     const router = useRouter();
     let id = router.query.dominoId as string;
     let isNew: boolean = true;
-    if (!id) {
-        isNew = false;
-    }
+
+    isNew = !id;
+
     const [domino, setDomino] = React.useState<IDomino>();
 
     React.useEffect(() => {
@@ -25,7 +25,7 @@ const Domino = () => {
     return (
         <PageTemplate 
             main={<TheDomino isNew={!isNew} domino={domino || { topIcon: Emoji.coffee, bottomIcon: Emoji.coffee, colour: 'white' } as IDomino} handleSubmit={(domino: IDomino) => { 
-            isNew ? updateDomino(domino) : addDomino(domino);
+            isNew ? addDomino(domino) : updateDomino(domino);
             Router.push(`/`);
         }} />} />
     );

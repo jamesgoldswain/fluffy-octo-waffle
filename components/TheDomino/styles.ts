@@ -5,18 +5,23 @@ export const styles = (theme : ITheme) => {
   return css`
 
   input {
-    padding-top:20px;
     width: 100%;
+    padding-top:20px;
     font-size: 25pt;
     border: 0;
     text-align: center;
   }
 
   div {
-    height: 120px;
     width: 120px;
-    border: solid 1px #000;
     padding: 5px;
+  }
+
+  .emojis {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center
   }
 
   .emojiChoice:hover {
@@ -29,14 +34,14 @@ export const styles = (theme : ITheme) => {
     transition: transform .2s; /* Animation */
   }
 
-  .emojiChoice:hover {
-    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  .top {
+    min-height: 100px;
+    border-radius: 10px 10px 0 0;
+
   }
 
-  .top {
-    border-radius: 10px 10px 0 0;
-  }
   .bottom {
+    border-top: solid 1px #000;
     border-radius: 0 0 10px 10px;
   }
 

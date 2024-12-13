@@ -10,8 +10,6 @@ export const styles = (theme : ITheme) => {
     text-align: center;
   }
 
-  width: 80%;
-
   margin-left: auto:
   margin-right: auto;
 
